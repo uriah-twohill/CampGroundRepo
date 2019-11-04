@@ -1,0 +1,50 @@
+﻿@model IEnumerable<FinalAssessment.Models.Customers>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<head>
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+</head>
+
+<h1>Customers</h1>
+
+<p>
+    <a class="buttons" asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                <a class="buttons" asp-action="Edit" asp-route-id="@item.Cid">Edit</a> 
+                <a class="buttons" asp-action="Details" asp-route-id="@item.Cid">Details</a> 
+                <a class="buttons" asp-action="Delete" asp-route-id="@item.Cid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

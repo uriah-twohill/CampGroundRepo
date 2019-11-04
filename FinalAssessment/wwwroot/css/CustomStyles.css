@@ -1,0 +1,49 @@
+﻿.main {
+    margin: auto;
+    width: 1870px;
+    height: 800px;
+    background-image: url('../Resources/Home.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.main1 {
+    margin: auto;
+    width: 1870px;
+    height: 600px;
+    background-color: whitesmoke;
+}
+.heading {
+    color: white;
+    text-align: center;
+    margin-top: 350px;
+    font-size: 100px;
+}
+.heading1 {
+    color: darkgreen;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 50px;
+}
+div {
+    margin: auto;
+    float: left;
+    text-align: center;
+}
+.logo {
+    width: 100px;
+    height: 100px;
+}
+.nav-item:hover{
+    background-color: darkgray;
+}
+footer {
+    font-size: 20px;
+    background-color: floralwhite;
+    color: white;
+    margin: auto;
+    text-align: center;
+}
+p{
+    margin-left: 30%;
+    margin-right: 30%;
+}

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<FinalAssessment.Models.Order>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<head>
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+</head>
+
+<h1>Orders</h1>
+
+<p>
+    <a class="buttons" asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PurchaseDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.C)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.P)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchaseDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.C.Cid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.P.Pid)
+            </td>
+            <td>
+                <a class="buttons" asp-action="Edit" asp-route-id="@item.Oid">Edit</a> 
+                <a class="buttons" asp-action="Details" asp-route-id="@item.Oid">Details</a> 
+                <a class="buttons" asp-action="Delete" asp-route-id="@item.Oid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

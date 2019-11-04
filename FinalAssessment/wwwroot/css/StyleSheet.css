@@ -1,0 +1,13 @@
+﻿.nav-item:hover {
+    background-color: darkgray;
+}
+.logo {
+    width: 100px;
+    height: 100px;
+}
+.buttons{
+    background-color: lightgray;
+    border: solid;
+    border-radius: 5px;
+    border-color: darkgrey;
+}
