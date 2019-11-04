@@ -28,13 +28,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Products[0].ProductName)
+                @Html.ActionLink("ProductName", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Products[0].Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Products[0].Price)
+                @Html.ActionLink("Price", "Index", new { sortOrder = ViewBag.PriceSortParm, currentFilter = ViewBag.CurrentFilter})
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Products[0].Rating)

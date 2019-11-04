@@ -23,8 +23,13 @@ namespace FinalAssessment.Controllers
 
         [Authorize]
         // GET: Products
-        public async Task<IActionResult> Index(string productCategory, string searchString)
+        public async Task<IActionResult> Index(string sortOrder, string productCategory, string searchString)
         {
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.PriceSortParm = sortOrder == "Price" ? "price_desc" : "Price";
+
+
             // Use LINQ to get list of genres.
             IQueryable<string> genreQuery = from m in _context.Products
                                             orderby m.Category
@@ -41,6 +46,28 @@ namespace FinalAssessment.Controllers
             if (!string.IsNullOrEmpty(productCategory))
             {
                 products = products.Where(x => x.Category == productCategory);
+            }
+
+            if(!String.IsNullOrEmpty(searchString))
+            {
+                products = products.Where(p => p.ProductName.Contains(searchString)
+                    || p.ProductName.Contains(searchString));
+            }
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    products = products.OrderByDescending(p => p.ProductName);
+                    break;
+                case "Price":
+                    products = products.OrderBy(p => p.Price);
+                    break;
+                case "price_desc":
+                    products = products.OrderByDescending(p => p.Price);
+                    break;
+                default:
+                    products = products.OrderBy(p => p.ProductName);
+                    break;
             }
 
             var productCategoryVM = new ProductCategoryViewModel
