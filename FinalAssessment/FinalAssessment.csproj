@@ -1,8 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <UserSecretsId>aspnet-FinalAssessment-813E699D-00FA-4DB9-9FF0-576FE69C3222</UserSecretsId>
+
+    <AdditionalFileItemNames>$(AdditionalFileItemNames);Content</AdditionalFileItemNames>
   </PropertyGroup>
 
 
@@ -26,5 +28,7 @@
   <ItemGroup>
     <None Include="wwwroot\Resources\Home.jpg" />
   </ItemGroup>
+
+
 
 </Project>
