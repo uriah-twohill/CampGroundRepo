@@ -17,7 +17,7 @@ namespace FinalAssessment.Models
 
         // Constructor and data validations for the string Name
         [StringLength(60, MinimumLength = 3, ErrorMessage ="Names are required to be between 3 and 60 characters long.")]
-        [RegularExpression("^[A-Za-z]*$", ErrorMessage = "Please only use letters")]
+        [RegularExpression("^[A-Za-z ]*$", ErrorMessage = "Please only use letters")]
         [Required(ErrorMessage = "Please provide a Name")]
         public string Name { get; set; }
 

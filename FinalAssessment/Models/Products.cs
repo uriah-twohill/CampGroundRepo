@@ -38,7 +38,7 @@ namespace FinalAssessment.Models
 
         // constructor and data validations for string Category
         [StringLength(30, MinimumLength = 5, ErrorMessage ="Please enter a category for this product between 5 and 30 characters long.")]
-        [RegularExpression("^[A-Za-z]*$", ErrorMessage = "Please only use letters")]
+        [RegularExpression("^[A-Za-z ]*$", ErrorMessage = "Please only use letters")]
         [Required(ErrorMessage = "Please enter a category for this product.")]
         public string Category { get; set; }
 
