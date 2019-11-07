@@ -24,7 +24,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Phone" class="control-label"></label>
-                <input asp-for="Phone" class="form-control" />
+                <input asp-for="Phone" class="form-control" /> <!--oncopy="return false", onpaste="return false" - to prevent copy and paste if needed.-->
                 <span asp-validation-for="Phone" class="text-danger"></span>
             </div>
             <div class="form-group">

@@ -11,6 +11,8 @@ namespace FinalAssessment.Models
             Order = new HashSet<Order>();
         }
 
+        [RegularExpression(@"^[0-9]+$", ErrorMessage = "Use numbers only please")]
+        [Required(ErrorMessage = "A product ID must be provided.")]
         public string Pid { get; set; }
 
         [StringLength(60, MinimumLength = 3, ErrorMessage ="Product names are required to be between 3 and 50 characters long.")]
@@ -30,6 +32,7 @@ namespace FinalAssessment.Models
         public int? Rating { get; set; }
 
         [StringLength(30, MinimumLength = 5, ErrorMessage ="Please enter a category for this product between 5 and 30 characters long.")]
+        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Use letters only please")]
         [Required(ErrorMessage = "Please enter a category for this product.")]
         public string Category { get; set; }
 
